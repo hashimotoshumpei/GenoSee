@@ -1,0 +1,48 @@
+{
+    "normal": {
+        "0|0": "gold",
+        "1|1": "dodgerblue",
+        "0": "gold",
+        "1": "dodgerblue",
+        "0|1": "limegreen",
+        ".|.": "gray",
+        ".": "gray"
+    },
+    "pastel": {
+        "0|0": "#7A7BB1",
+        "1|1": "#FB9CA9",
+        "0|1": "#AD8542",
+        "0": "#7A7BB1",
+        "1": "#FB9CA9",
+        ".|.": "gray",
+        ".": "gray"
+    },
+    "grays": {
+        "0|0": "dimgray",
+        "1|1": "lightgray",
+        "0|1": "white",
+        "0": "dimgray",
+        "1": "lightgray",
+        ".|.": "gray",
+        ".": "gray"
+    },
+    "reds": {
+        "0|0": "red",
+        "1|1": "lightcoral",
+        "0|1": "mistyrose",
+        "0": "red",
+        "1": "lightcoral",
+        ".|.": "gray",
+        ".": "gray"
+    },
+    "blues": {
+        "0|0": "blue",
+        "1|1": "lightblue",
+        "0|1": "aliceblue",
+        "0": "blue",
+        "1": "lightblue",
+        ".|.": "gray",
+        ".": "gray"
+    }
+}
+
