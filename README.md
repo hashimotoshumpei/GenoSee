@@ -1,19 +1,17 @@
 ![1717394618995](image/read_me/1717394618995.png)
 
-## A high-quality visualization tool for graphical genotype
-
-The visualization of genotypic data plays a crucial role in plant genetics, providing clear depictions of chromosomal information and enhancing the understanding of genetic architecture. This is particularly important with the rise of Next-Generation Sequencing (NGS) technologies, which produce extensive data that necessitates effective visualization tools. Traditional tools for creating graphical genotypes, while pioneering, often lacked flexibility and broad application, suffering from limitations such as static visualization approaches and compatibility issues across different operating systems. Here, I developed GenoSee, a novel visualization tool designed to address these deficiencies. Developed in Python and capable of handling both phased and non-phased genotyping data, GenoSee offers extensive customization to meet diverse research needs. It operates across multiple platforms without compatibility issues and provides user-friendly, customizable graphical genotypes ready for publication. By improving the accessibility and customization of genetic data visualization, GenoSee facilitates deeper insights into genetic structures, advancing genetic research and breeding programs.
-
+# A high-quality visualization tool for graphical genotype
 ![1718024457753](image/read_me/1718024457753.png)
 
 ## Getting Started
+
 
 ### Installation
 
 You can git clone the Github repo and install it locally with the following:
 
 ```
-git clone https://github.com/hashimotoshumpei/GenoSee
+git clone https://github.com/hashimotoshumpei/GenoSee.git
 cd GenoSee
 python GenoSee.py --help
 ```
