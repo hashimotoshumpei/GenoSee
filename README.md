@@ -83,16 +83,16 @@ Here is a list of the arguments that can be used with this tool.
 | --------------------- | ------------------------------------------------------------- |
 | `-h`, `--help`    | Displays this help message and basic documentation.           |
 | `-i`, `--input`   | Specifies the file path of the input CSV file [required].     |
+| `-s`, `--species` | Name of species to be analyzed [required].                    |
 | `-o`, `--output`  | Specifies the file path of the output image file.             |
-| `--fill`            | [default: on]                                                 |
-| `--drawing_mode`    | Selects the drawing mode [normal, multi, zoomed].             |
-| `--color_mode`      | Selects the color mode: 2-color or 3-color [default: 2-color] |
+| `--fill`            | Fill between markers [default: on].                          |
+| `--drawing_mode`    | Selects the drawing mode: normal, compare or zoomed [default: normal].  |
+| `--coloring_mode`      | Selects the color mode: 2-color or 3-color [default: 2-color] |
 | `--add_marker_name` | Adds marker names at each position [default: on].             |
-| `--species`         | [required]                                                    |
-| `--chr`             | If you choosed 'zoomed' mode,                                 |
-| `--start`           |                                                               |
-| `--end`             |                                                               |
-| --dpi                 |                                                               |
+| `--chr`             | Chromosome number of the region to zoom in.                    |
+| `--start`           |  Start position of the region to zoom in.                       |
+| `--end`             |  End position of the region to zoom in.                          |
+| `--dpi`             |   dpi of the output image(s).                                   |
 
 ## Examples
 
