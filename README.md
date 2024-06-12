@@ -86,7 +86,7 @@ Here is a list of the arguments that can be used with this tool.
 | `--fill`            | Fill between markers [default: on].                          |
 | `--drawing_mode`    | Selects the drawing mode: normal, compare or zoomed [default: normal].  |
 | `--coloring_mode`      | Selects the color mode: 2-color or 3-color [default: 2-color] |
-| `--add_marker_name` | Adds marker names at each position [default: on].             |
+| `--display_marker_names` | Adds marker names at each position [default: on].             |
 | `--chr`             | Chromosome number of the region to zoom in.                    |
 | `--start`           |  Start position of the region to zoom in.                       |
 | `--end`             |  End position of the region to zoom in.                          |
