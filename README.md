@@ -4,8 +4,6 @@
 ![1718024457753](image/read_me/1718024457753.png)
 
 ## Getting Started
-
-
 ### Installation
 
 You can git clone the Github repo and install it locally with the following:
@@ -67,11 +65,10 @@ You can use three formats as input data.
 | chr02 | chr02_6600182 | 6600182 |   ./.   |   1/0   |   0/0   |
 |  ...  |      ...      |   ...   |   ...   |   ...   |   ...   |
 
-Note: In this version of GenoSee, multi-allelic sites are NOT supported (i.e., genotypes such as 0/2 and 1/3 are not allowed for analysis).
-
-To remove multi-allelic sites from an original VCF, you can use bcftools (https://samtools.github.io/bcftools/bcftools.html).
-
-`bcftools view --max-alleles 2 input.vcf.gz`
+>[!IMPORTANT]
+>In this version of GenoSee, multi-allelic sites are NOT supported (i.e., genotypes such as 0/2 and 1/3 are not allowed for analysis).
+>To remove multi-allelic sites from an original VCF, you can use bcftools (https://samtools.github.io/bcftools/bcftools.html).
+>`bcftools view --max-alleles 2 input.vcf.gz`
 
 ### Options
 
@@ -129,7 +126,7 @@ python GenoSee.py --input ./examples/Oryza_sativa_phased_100_markers_10_samples.
 ![1718118135973](image/read_me/1718118135973.png)
 
 ```
-python GenoSee.py --input ./examples/Oryza_sativa_phased_100000_markers_10_samples.csv --species Oryza_sativa --drawing_mode compare --coloring_mode 3-color --display_marker_names off --fill offpython GenoSee.py os 100000 marker --display_marker_name=off
+python GenoSee.py --input ./examples/Oryza_sativa_phased_100000_markers_10_samples.csv --species Oryza_sativa --drawing_mode compare --coloring_mode 3-color --display_marker_names off --fill off
 ```
 
 ![1718118930524](image/read_me/1718118930524.png)
@@ -137,7 +134,7 @@ python GenoSee.py --input ./examples/Oryza_sativa_phased_100000_markers_10_sampl
 ### 3. Local comparison graphical genotype
 
 ```
-python GenoSee.py --input=./examples/Triticum_aestivum_simple_100000_markers_10_samples.csv --species=Triticum_aestivum --drawing_mode=zoomed --display_marker_names=on --chr=Chr1A --start=1000000 --end=2000000python GenoSee.py -i xxxx.csv -o ./results -s Oryza_sativa --fill on 
+python GenoSee.py --input=./examples/Triticum_aestivum_simple_100000_markers_10_samples.csv --species=Triticum_aestivum --drawing_mode=zoomed --display_marker_names=on --chr=Chr1A --start=1000000 --end=2000000
 ```
 
 ![1718119694575](image/read_me/1718119694575.png)
@@ -161,19 +158,23 @@ The lengths of each chromosome for the following species are pre-registered in t
 
 You can add chromosome lengths of new species from genome fasta file by using `add_chromosome_lengths.py` in this repo like this;
 
-``python add_chromosome_lengths.py path/to/your/file.fasta.gz path/to/your/chromosome_length_database.json your_species_name``
+```python add_chromosome_lengths.py path/to/your/file.fasta.gz path/to/your/chromosome_length_database.json your_species_name```
 
-Note: BioPython package needs to be installed before use.
-
-`pip install BioPython`
+>[!NOTE]
+>BioPython package needs to be installed before use.
+>
+>`pip install BioPython`
 
 ### How to make an input format from a VCF file ?
 
 By using `make_input_file_from_VCF.py`, you can create an input file for GenoSee from a VCF file.
 
-`python make_input_file_from_VCF.py path/to/your/VCF`
+```python make_input_file_from_VCF.py path/to/your/VCF```
 
-Note: BioPython package needs to be installed before use.
+>[!NOTE]
+>PyVCF package needs to be installed before use.
+>
+>`pip install PyVCF`
 
 ### How to custamize visuzlization results ?
 
