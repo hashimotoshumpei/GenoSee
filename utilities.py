@@ -24,13 +24,6 @@ def print_welcome_message():
     print("Version 1.0.0 (2024-5-8)")
     print("---------------------------------------------------------------")
 
-def check_colnames(dataframe):
-    print('Checking column names... : ', end='')
-    is_colname_ok = False
-    if sum(dataframe.columns.values[:3] == ['chr', 'marker_name', 'pos']) == 3:
-        is_colname_ok = True
-    return is_colname_ok
-
 def round_up_second_digit(number):
     first_digit = int(str(number)[0])
     number_of_digits = len(str(number))
@@ -54,7 +47,7 @@ def get_value_from_database(json_file_path, key):
     value = data.get(key, None)
 
     if value is None:
-        print(f'{key} is not existed in the database.')
+        print(f"{key} is doesn't exist in the database.")
     
     # Return the value for the specified species
     return value

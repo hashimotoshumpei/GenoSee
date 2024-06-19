@@ -4,7 +4,7 @@ import argparse
 import sys
 import pandas as pd
 import matplotlib.pyplot as plt
-from utilities import print_welcome_message, round_up_second_digit, get_value_from_database, check_colnames
+from utilities import print_welcome_message, round_up_second_digit, get_value_from_database
 from plotting import create_normal_plot, create_comparison_plot, create_zoomed_plot
 
 def parse_arguments():
@@ -33,11 +33,11 @@ def main():
     data = pd.read_csv(args.input)
     data.sort_values(['chr', 'pos'], inplace=True)
 
-    if check_colnames(data):
-        print('Passed!')
-    else:
+    if not (len(data.columns) > 3 and all(data.columns.values[:3] == ['chr', 'marker_name', 'pos'])):
         print('\nYou have wrong column name(s)😢！')
-        sys.exit()
+        sys.exit(1)
+
+    data.sort_values(['chr', 'pos'], inplace=True)
 
     if args.drawing_mode == "normal":
         for column in range(3, len(data.columns)):
@@ -45,12 +45,14 @@ def main():
             print(f'Now, processing {sample_name}')
             create_normal_plot(data, chrs_dict, color_dict, args.coloring_mode, args.fill, args.display_marker_names, sample_name, column, args.output, args.dpi)
     
-    if args.drawing_mode == "compare":
+    elif args.drawing_mode == "compare":
         create_comparison_plot(data, chrs_dict, color_dict, args.coloring_mode, args.fill, args.display_marker_names, args.output, args.dpi)
 
-    if args.drawing_mode == "zoomed":
+    elif args.drawing_mode == "zoomed":
         create_zoomed_plot(data, chrs_dict, color_dict, args.coloring_mode, args.fill, args.chr, args.start, args.end, args.output, args.dpi)
-    
+    else:
+        print('\nInvalid argument for drawing mode')
+        sys.exit(1)
     print('Finished!!😄👍🎉')
 
 if __name__ == "__main__":

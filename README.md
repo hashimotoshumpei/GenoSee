@@ -176,7 +176,7 @@ By using `make_input_file_from_VCF.py`, you can create an input file for GenoSee
 >
 >`pip install PyVCF`
 
-### How to custamize visuzlization results ?
+### How to custamize visualization results ?
 
 You can adjust the output diagram by directly modifying the variables within the functions responsible for each drawing mode. Each drawing mode corresponds to the following functions in `plotting.py`.
 
@@ -197,7 +197,7 @@ Following color pallettes are pre-registered in the database (color_set.json)
 
 ### How to add new color sets ?
 
-By editing `color_set.json` directly, you can use new color sets for zisualization. Please run  `GenoSee.py` with `--color_palette` as an argument like `--color_palette new_color_set` . In this version of GenoSee, The specification of the color set is somewhat redundant. "0|0", "1|1", "0|1" and ".|." are used in the `3-color` mode, whereas "0", "1" and "." are used in the `2-color` mode.
+By editing `color_set.json` directly, you can use new color sets for visualization. Please run  `GenoSee.py` with `--color_palette` as an argument like `--color_palette new_color_set` . In this version of GenoSee, The specification of the color set is somewhat redundant. "0|0", "1|1", "0|1" and ".|." are used in the `3-color` mode, whereas "0", "1" and "." are used in the `2-color` mode.
 
 ```
 "normal": {

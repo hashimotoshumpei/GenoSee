@@ -592,8 +592,8 @@ def create_normal_plot(data, chrs_dict, color_dict, Color_mode, fill, display_ma
     add_legend(ax, fill, Color_mode, color_dict, chr_width, chr_interval, max_chr_length, left)
     ax.set_xlim(0, left+chr_interval*2)
     print('Saving image...💌')
-    plt.savefig(f'{output_path}/{sample_name}_{mode}_{Color_mode}.pdf')
-    plt.savefig(f'{output_path}/{sample_name}_{mode}_{Color_mode}.png', dpi=dpi)
+    plt.savefig(f'{output_path}/{sample_name}_{mode}_{Color_mode}.pdf', bbox_inches='tight')
+    plt.savefig(f'{output_path}/{sample_name}_{mode}_{Color_mode}.png', dpi=dpi, bbox_inches='tight')
     plt.clf()
     plt.close()
     
@@ -1002,8 +1002,8 @@ def create_comparison_plot(data, chrs_dict, color_dict, Color_mode, fill, displa
         add_legend(ax, fill, Color_mode, color_dict, chr_width, chr_interval, max_chr_length, left)
         print('Saving image...💌')
         ax.set_xlim(0, left+chr_interval*4)
-        plt.savefig(f'{output_path}/{chr_id}_multi_plot_{Color_mode}.pdf')
-        plt.savefig(f'{output_path}/{chr_id}_multi_plot_{Color_mode}.png', dpi=dpi)
+        plt.savefig(f'{output_path}/{chr_id}_comparison_plot_{Color_mode}.pdf', bbox_inches='tight')
+        plt.savefig(f'{output_path}/{chr_id}_comparison_plot_{Color_mode}.png', dpi=dpi, bbox_inches='tight')
         plt.clf()
         plt.close()
 
@@ -1344,5 +1344,5 @@ def create_zoomed_plot(data, chrs_dict, color_dict, Color_mode, fill, chr_id, st
 
     add_legend2(ax, fill, Color_mode, color_dict, width, interval, end_pos-start_pos, bottom)
     print('Saving image...💌')
-    plt.savefig(f'{output_path}/{chr_id}_{start_pos}_{end_pos}_{Color_mode}.pdf')
-    plt.savefig(f'{output_path}/{chr_id}_{start_pos}_{end_pos}_{Color_mode}.png', dpi=dpi)
+    plt.savefig(f'{output_path}/{chr_id}_{start_pos}_{end_pos}_{Color_mode}.pdf', bbox_inches='tight')
+    plt.savefig(f'{output_path}/{chr_id}_{start_pos}_{end_pos}_{Color_mode}.png', dpi=dpi, bbox_inches='tight')
