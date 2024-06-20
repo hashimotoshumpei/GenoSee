@@ -222,4 +222,4 @@ By editing `color_set.json` directly, you can use new color sets for visualizati
 
 In preparation for publication...
 
-![img15](image/GenoSee_logo2.png)
+![img15](image/genosee_logo2.png)
