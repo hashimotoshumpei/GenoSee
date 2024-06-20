@@ -39,6 +39,10 @@ def main():
 
     data.sort_values(['chr', 'pos'], inplace=True)
 
+    if not (set(data['chr'].unique()) == set(chrs_dict.keys())):
+        print('\nChromosome numbers in the input file do not match the species😢!')
+        sys.exit(1)
+
     if args.drawing_mode == "normal":
         for column in range(3, len(data.columns)):
             sample_name = data.columns[column]
@@ -49,10 +53,30 @@ def main():
         create_comparison_plot(data, chrs_dict, color_dict, args.coloring_mode, args.fill, args.display_marker_names, args.output, args.dpi)
 
     elif args.drawing_mode == "zoomed":
+
+        if any(p is None for p in (args.chr, args.start, args.end)):
+            print('\nThe required information has not been entered.')
+            print('Please ensure that --chr, --start_pos, and --end_pos are entered.')
+            sys.exit(1)
+
+        if args.chr not in chrs_dict.keys():
+            print("\nChromosome name doesn't mutch😢!")
+            sys.exit(1)
+
+        if args.start > args.end:
+            print('\nStart position is larger than end position😢!')
+            sys.exit(1)
+
+        if args.end > chr_dict[args.chr]:
+            print('\nEnd position is larger than chromosome length😢!')
+            sys.exit(1)
+            
         create_zoomed_plot(data, chrs_dict, color_dict, args.coloring_mode, args.fill, args.chr, args.start, args.end, args.output, args.dpi)
+
     else:
         print('\nInvalid argument for drawing mode')
         sys.exit(1)
+
     print('Finished!!😄👍🎉')
 
 if __name__ == "__main__":
