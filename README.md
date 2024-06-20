@@ -217,6 +217,10 @@ By editing `color_set.json` directly, you can use new color sets for visualizati
         ".": "gray"
 }
 ```
+### What is ColabGenoSee ?
+![img](image/ColabGenoSee.png)
+ColabGenoSee is the Google Colab version of GenoSee.
+To use ColabGenoSee, first move the ColabGenoSee folder to your Google Drive, then open ColabGenoSee.ipynb in Google Colab and run it.
 
 ## Citation
 
