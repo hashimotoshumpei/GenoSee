@@ -1,7 +1,7 @@
-![1717394618995](image/read_me/1717394618995.png)
+![img1](image/GenoSee_logo1.png)
 
 # A high-quality visualization tool for graphical genotype
-![1718024457753](image/read_me/1718024457753.png)
+![img2](image/readme_img_1.png)
 
 ## Getting Started
 ### Installation
@@ -13,8 +13,6 @@ git clone https://github.com/hashimotoshumpei/GenoSee.git
 cd GenoSee
 python GenoSee.py --help
 ```
-
-![1718026976393](image/read_me/1718026976393.png)
 
 ### Requirement
 
@@ -97,19 +95,19 @@ Here is a list of the arguments that can be used with this tool.
 python GenoSee.py --input ./examples/Oryza_sativa_phased_100_markers_10_samples.csv --species Oryza_sativa
 ```
 
-![1718117842770](image/read_me/1718117842770.png)
+![img3](image/Os_filled_2-color_normal.png)
 
 ```
 python GenoSee.py --input ./examples/Oryza_sativa_phased_100_markers_10_samples.csv --species Oryza_sativa --color_mode 3-color
 ```
 
-![1718117860797](image/read_me/1718117860797.png)
+![img4](image/Os_filled_3-color_normal.png)
 
 ```
-python GenoSee.py --input ./examples/Oryza_sativa_phased_100000_markers_10_samples.csv --species Oryza_sativa --display_marker_names off
+python GenoSee.py --input ./examples/Oryza_sativa_phased_100000_markers_10_samples.csv --species Oryza_sativa --display_marker_names off --fill off
 ```
 
-![1718117870392](image/read_me/1718117870392.png)
+![img5](image/Os_lined_100000_2-color_normal.png)
 
 ### 2. Comparison graphical genotype
 
@@ -117,19 +115,19 @@ python GenoSee.py --input ./examples/Oryza_sativa_phased_100000_markers_10_sampl
 python GenoSee.py --input ./examples/Oryza_sativa_phased_100_markers_10_samples.csv --species Oryza_sativa --drawing_mode compare 
 ```
 
-![1718118111994](image/read_me/1718118111994.png)
+![img6](image/chr01_multi_plot_2-color.png)
 
 ```
 python GenoSee.py --input ./examples/Oryza_sativa_phased_100_markers_10_samples.csv --species Oryza_sativa --drawing_mode compare --coloring_mode 3-color
 ```
 
-![1718118135973](image/read_me/1718118135973.png)
+![img7](image/chr01_multi_plot_3-color.png)
 
 ```
 python GenoSee.py --input ./examples/Oryza_sativa_phased_100000_markers_10_samples.csv --species Oryza_sativa --drawing_mode compare --coloring_mode 3-color --display_marker_names off --fill off
 ```
 
-![1718118930524](image/read_me/1718118930524.png)
+![img8](image/chr01_100000_multi_plot_3-color.png)
 
 ### 3. Local comparison graphical genotype
 
@@ -137,7 +135,7 @@ python GenoSee.py --input ./examples/Oryza_sativa_phased_100000_markers_10_sampl
 python GenoSee.py --input=./examples/Triticum_aestivum_simple_100000_markers_10_samples.csv --species=Triticum_aestivum --drawing_mode=zoomed --display_marker_names=on --chr=Chr1A --start=1000000 --end=2000000
 ```
 
-![1718119694575](image/read_me/1718119694575.png)
+![img9](image/Chr1A_1000000_2000000_2-color.png)
 
 ## Hints
 
@@ -188,11 +186,20 @@ You can adjust the output diagram by directly modifying the variables within the
 
 Adjustable variables correspond to the following elements within the diagram.
 
-![1717942130241](image/read_me/1717942130241.png)
+![img10](image/readme_img_2.png)
 
 ### What color sets are used to visualize ?
 
 Following color pallettes are pre-registered in the database (color_set.json)
+* normal
+![img11](image/normal.png)
+* grays
+![img12](image/grays.png)
+* reds
+![img13](image/reds.png)
+* blues
+![img14](image/blues.png)
+
 
 
 ### How to add new color sets ?
@@ -215,4 +222,4 @@ By editing `color_set.json` directly, you can use new color sets for visualizati
 
 In preparation for publication...
 
-![1717394672930](image/read_me/1717394672930.png)
+![img15](image/GenoSee_logo2.png)
