@@ -1,6 +1,7 @@
 ![img1](image/GenoSee_logo1.png)
 
 
+![GitHub Release Date](https://img.shields.io/github/release-date/hashimotoshumpei/GenoSee)
 ![GitHub last commit](https://img.shields.io/github/last-commit/hashimotoshumpei/GenoSee)
 ![GitHub License](https://img.shields.io/github/license/hashimotoshumpei/GenoSee)
 
