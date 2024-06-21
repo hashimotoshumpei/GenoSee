@@ -1,6 +1,13 @@
 ![img1](image/GenoSee_logo1.png)
 
+
+![GitHub last commit](https://img.shields.io/github/last-commit/hashimotoshumpei/GenoSee)
+![GitHub License](https://img.shields.io/github/license/hashimotoshumpei/GenoSee)
+
 # A high-quality visualization tool for graphical genotype
+
+
+
 ![img2](image/readme_img_1.png)
 
 ## Getting Started
