@@ -230,7 +230,6 @@ By editing `color_set.json` directly, you can use new color sets for visualizati
 ![img](image/ColabGenoSee.png)
 ColabGenoSee is the Google Colab version of GenoSee.
 To use ColabGenoSee, first move the ColabGenoSee folder to your Google Drive, then open ColabGenoSee.ipynb in Google Colab and run it.
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/hashimotoshumpei/GenoSee/tree/e6131900a9dedb36071255bb50abec23be5c4c62/ColabGenoSee)
 
 ## Citation
 
