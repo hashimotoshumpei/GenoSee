@@ -1,9 +1,10 @@
 ![img1](image/GenoSee_logo1.png)
 
-
+![GitHub Release](https://img.shields.io/github/v/release/hashimotoshumpei/GenoSee)
 ![GitHub Release Date](https://img.shields.io/github/release-date/hashimotoshumpei/GenoSee)
 ![GitHub last commit](https://img.shields.io/github/last-commit/hashimotoshumpei/GenoSee)
 ![GitHub License](https://img.shields.io/github/license/hashimotoshumpei/GenoSee)
+<img src="https://img.shields.io/badge/-Python-F9DC3E.svg?logo=python&style=flat">
 
 # A high-quality visualization tool for graphical genotype
 
@@ -229,6 +230,7 @@ By editing `color_set.json` directly, you can use new color sets for visualizati
 ![img](image/ColabGenoSee.png)
 ColabGenoSee is the Google Colab version of GenoSee.
 To use ColabGenoSee, first move the ColabGenoSee folder to your Google Drive, then open ColabGenoSee.ipynb in Google Colab and run it.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/hashimotoshumpei/GenoSee/ColabGenoSee)
 
 ## Citation
 
