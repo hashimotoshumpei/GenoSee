@@ -7,7 +7,7 @@ def convert_vcf_to_csv(vcf_file_path, csv_file_path):
     
     # Prepare the CSV file for writing
     with open(csv_file_path, 'w', newline='') as csvfile:
-        csvwriter = csv.writer(csvfile, delimiter='\t')
+        csvwriter = csv.writer(csvfile, delimiter=',')
         
         # Write the header
         header = ['chr', 'marker_name', 'pos']
