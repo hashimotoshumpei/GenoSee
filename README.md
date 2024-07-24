@@ -107,7 +107,7 @@ python GenoSee.py --input ./examples/Oryza_sativa_phased_100_markers_10_samples.
 ![img3](image/Os_filled_2-color_normal.png)
 
 ```
-python GenoSee.py --input ./examples/Oryza_sativa_phased_100_markers_10_samples.csv --species Oryza_sativa --color_mode 3-color
+python GenoSee.py --input ./examples/Oryza_sativa_phased_100_markers_10_samples.csv --species Oryza_sativa --coloring_mode 3-color
 ```
 
 ![img4](image/Os_filled_3-color_normal.png)
