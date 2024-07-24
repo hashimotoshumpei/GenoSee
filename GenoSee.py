@@ -54,6 +54,10 @@ def main():
 
     elif args.drawing_mode == "zoomed":
 
+        if args.fill=='off':
+            print('Zoomed-mode is only supported when fill=on.')
+            sys.exit(1)
+
         if any(p is None for p in (args.chr, args.start, args.end)):
             print('\nThe required information has not been entered.')
             print('Please ensure that --chr, --start_pos, and --end_pos are entered.')
@@ -67,7 +71,7 @@ def main():
             print('\nStart position is larger than end position😢!')
             sys.exit(1)
 
-        if args.end > chr_dict[args.chr]:
+        if args.end > chrs_dict[args.chr]:
             print('\nEnd position is larger than chromosome length😢!')
             sys.exit(1)
             

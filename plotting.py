@@ -86,81 +86,46 @@ def add_legend(ax, fill, Color_mode, color_dict, chr_width, chr_interval, max_ch
                 ax.text(x1, (y0+y1)/2, legend_category[i], size=12, horizontalalignment='left', verticalalignment='center')
                 ax.hlines((y0+y1)/2, x0, x1, colors=color_dict[geno], lw=5)
 
-def add_legend2(ax, fill, Color_mode, color_dict, chr_width, chr_interval, max_chr_length, left):
-    if fill == 'on':
-        if Color_mode == '2-color':
-            for i, geno in enumerate(['0', '1', '.']):   
-            
-                legend_category = [' REF', ' ALT', ' MISSING']
+def add_legend2(ax, Color_mode, color_dict, chr_width, chr_interval, max_chr_length, left, start_pos):
 
-                legend_height = chr_width*2
-                legend_width = max_chr_length*0.03 
+    if Color_mode == '2-color':
+        for i, geno in enumerate(['0', '1', '.']):   
+        
+            legend_category = [' REF', ' ALT', ' MISSING']
 
-                y0 = left + chr_width*4 + chr_interval
-                y1 = y0 + legend_height
-                x0 = legend_width * (3 * i + 3)
-                x1 = x0 + legend_width
+            legend_height = chr_width*2
+            legend_width = max_chr_length*0.03
 
-                ax.add_patch(
-                            patches.Rectangle(xy=(x0, y0), width=legend_width, height=legend_height, ec='black', fc=color_dict[geno])
-                        )
-                ax.text(x1, (y0+y1)/2, legend_category[i], size=20, horizontalalignment='left', verticalalignment='center')
+            y0 = left + chr_width*4 + chr_interval
+            y1 = y0 + legend_height
+        
+            x0 = start_pos + legend_width * (3 * i)
+            x1 = x0 + legend_width
 
-        if Color_mode == '3-color':
-            for i, geno in enumerate(['0', '1', '0|1', '.']):   
-            
-                legend_category = [' REF', ' ALT', ' HET', ' MISSING']
+            ax.add_patch(
+                        patches.Rectangle(xy=(x0, y0), width=legend_width, height=legend_height, ec='black', fc=color_dict[geno])
+                    )
+            ax.text(x1, (y0+y1)/2, legend_category[i], size=20, horizontalalignment='left', verticalalignment='center')
 
-                legend_height = chr_width*2
-                legend_width = max_chr_length*0.03 
+    if Color_mode == '3-color':
+        for i, geno in enumerate(['0', '1', '0|1', '.']):   
+        
+            legend_category = [' REF', ' ALT', ' HET', ' MISSING']
 
-                y0 = left + chr_width*4 + chr_interval
-                y1 = y0 + legend_height
-                x0 = legend_width * (3 * i + 3)
-                x1 = x0 + legend_width
+            legend_height = chr_width*2
+            legend_width = max_chr_length*0.03 
 
-                ax.add_patch(
-                            patches.Rectangle(xy=(x0, y0), width=legend_width, height=legend_height, ec='black', fc=color_dict[geno])
-                        )
-                ax.text(x1, (y0+y1)/2, legend_category[i], size=20, horizontalalignment='left', verticalalignment='center')
+            y0 = left + chr_width*4 + chr_interval
+            y1 = y0 + legend_height
 
-    if fill == 'off':
-        if Color_mode == '2-color':
-            for i, geno in enumerate(['0', '1', '.']):   
-            
-                legend_category = [' REF', ' ALT', ' MISSING']
+            x0 = start_pos + legend_width * (3 * i)
+            x1 = x0 + legend_width
 
-                legend_width = chr_width*2
-                legend_height = max_chr_length*0.03 
+            ax.add_patch(
+                        patches.Rectangle(xy=(x0, y0), width=legend_width, height=legend_height, ec='black', fc=color_dict[geno])
+                    )
+            ax.text(x1, (y0+y1)/2, legend_category[i], size=20, horizontalalignment='left', verticalalignment='center')
 
-                x0 = left + chr_width + chr_interval
-                x1 = x0 + legend_width
-                y0 = legend_height * (3 * i + 1)/2
-                y1 = y0 + legend_height
-
-                ax.add_patch(
-                            patches.Rectangle(xy=(x0, y0), width=legend_width, height=legend_height, ec='black', fill=False)
-                        )
-                ax.text(x1, (y0+y1)/2, legend_category[i], size=12, horizontalalignment='left', verticalalignment='center')
-                ax.hlines((y0+y1)/2, x0, x1, colors=color_dict[geno], lw=5)
-        if Color_mode == '3-color':
-            for i, geno in enumerate(['0', '1', '0|1', '.']):   
-            
-                legend_category = [' REF', ' ALT', ' HET', ' MISSING']
-
-                legend_width = chr_width*2
-                legend_height = max_chr_length*0.03 
-
-                x0 = left + chr_width + chr_interval
-                x1 = x0 + legend_width
-                y0 = legend_height * (3 * i + 1)/2
-                y1 = y0 + legend_height
-
-                ax.add_patch(
-                            patches.Rectangle(xy=(x0, y0), width=legend_width, height=legend_height, ec='black', fill=False)
-                        )
-                ax.text(x1, (y0+y1)/2, legend_category[i], size=12, horizontalalignment='left', verticalalignment='center')
-                ax.hlines((y0+y1)/2, x0, x1, colors=color_dict[geno], lw=5)
 
 def create_normal_plot(data, chrs_dict, color_dict, Color_mode, fill, display_marker_names, sample_name, column_number, output_path, dpi):
 
@@ -1342,7 +1307,7 @@ def create_zoomed_plot(data, chrs_dict, color_dict, Color_mode, fill, chr_id, st
         )
         ax.text(start_pos, (bottom + top) / 2, f'{sample_name}  ', verticalalignment="center", horizontalalignment='right', size=24)
 
-    add_legend2(ax, fill, Color_mode, color_dict, width, interval, end_pos-start_pos, bottom)
+    add_legend2(ax, Color_mode, color_dict, width, interval, end_pos-start_pos, bottom, start_pos)
     print('Saving image...💌')
     plt.savefig(f'{output_path}/{chr_id}_{start_pos}_{end_pos}_{Color_mode}.pdf', bbox_inches='tight')
     plt.savefig(f'{output_path}/{chr_id}_{start_pos}_{end_pos}_{Color_mode}.png', dpi=dpi, bbox_inches='tight')
