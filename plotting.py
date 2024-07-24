@@ -534,10 +534,10 @@ def create_normal_plot(data, chrs_dict, color_dict, Color_mode, fill, display_ma
                         pass 
                     
             ax.add_patch(
-                patches.Rectangle(xy=(left, 0), width=chr_width, height=chr_length, ec='black', fill=False)
+                patches.Rectangle(xy=(left, 0), width=chr_width, height=chr_length, ec='black', fill=False, zorder=10)
             )
             ax.add_patch(
-                patches.Rectangle(xy=((left + right) / 2, 0), width=chr_width, height=chr_length, ec='black', fill=False)
+                patches.Rectangle(xy=((left + right) / 2, 0), width=chr_width, height=chr_length, ec='black', fill=False, zorder=10)
             )
             ax.text((left + right) / 2, -max_chr_length*0.03, chr_id,  horizontalalignment="center", size=chr_text_size)
 
@@ -927,6 +927,9 @@ def create_comparison_plot(data, chrs_dict, color_dict, Color_mode, fill, displa
                         elif genotypes[i] == "1|1":
                             ax.hlines(positions[i], left, right, colors=color_dict["1"], lw=3)
 
+                        elif genotypes[i] == ".|.":
+                            ax.hlines(positions[i], left, right, colors=color_dict["."], lw=3)
+
                         else:
                             pass
 
@@ -954,14 +957,17 @@ def create_comparison_plot(data, chrs_dict, color_dict, Color_mode, fill, displa
                         elif genotypes[i] == "1|1":
                             ax.hlines(positions[i], left, right, colors=color_dict["1"], lw=3)
 
+                        elif genotypes[i] == ".|.":
+                            ax.hlines(positions[i], left, right, colors=color_dict["."], lw=3)
+
                         else:
                             pass 
                         
                 ax.add_patch(
-                    patches.Rectangle(xy=(left, 0), width=chr_width, height=chr_length, ec='black', fill=False)
+                    patches.Rectangle(xy=(left, 0), width=chr_width, height=chr_length, ec='black', fill=False, zorder=10)
                 )
                 ax.add_patch(
-                    patches.Rectangle(xy=((left + right) / 2, 0), width=chr_width, height=chr_length, ec='black', fill=False)
+                    patches.Rectangle(xy=((left + right) / 2, 0), width=chr_width, height=chr_length, ec='black', fill=False, zorder=10)
                 )
                 ax.text((left + right) / 2, -max_chr_length*0.03, sample_name,  horizontalalignment="center", size=sample_name_text_size, rotation=90)
         add_legend(ax, fill, Color_mode, color_dict, chr_width, chr_interval, max_chr_length, left)

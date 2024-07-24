@@ -39,9 +39,9 @@ def main():
 
     data.sort_values(['chr', 'pos'], inplace=True)
 
-    if not (set(data['chr'].unique()) == set(chrs_dict.keys())):
-        print('\nChromosome numbers in the input file do not match the species😢!')
-        sys.exit(1)
+    #if not (set(data['chr'].unique()) == set(chrs_dict.keys())):
+        #print('\nChromosome numbers in the input file do not match the species😢!')
+        #sys.exit(1)
 
     if args.drawing_mode == "normal":
         for column in range(3, len(data.columns)):
