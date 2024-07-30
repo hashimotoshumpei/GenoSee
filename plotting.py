@@ -131,14 +131,14 @@ def create_normal_plot(data, chrs_dict, color_dict, Color_mode, fill, display_ma
 
     #########################################
     chr_width = 0.03
-    chr_interval = 0.4
+    chr_interval = 0.24
     pos_offset = 10 ** 5
-    fig_size_h = 15
-    fig_size_w = len(chrs_dict)*3.5
+    fig_size_h = 20
+    fig_size_w = len(chrs_dict)*(chr_width + chr_interval)*10
     chr_text_size = 24
     sample_name_text_size = 24
     Mb_text_size = 20
-    marker_name_text_size = 10
+    marker_name_text_size = 8
     #########################################
 
     fig, ax = plt.figure(facecolor='white', figsize=(fig_size_w, fig_size_h)), plt.axes()
