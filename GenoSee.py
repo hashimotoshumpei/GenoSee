@@ -20,7 +20,8 @@ def parse_arguments():
     parser.add_argument("--chr", type=str, default="", help="")
     parser.add_argument("--start", type=int, help="")
     parser.add_argument("--end", type=int, help="")
-    parser.add_argument("--dpi", type=int, default=200, help="dpi of output image")
+    parser.add_argument("--dpi", type=int, default=200, help="dpi of output PNG image")
+    parser.add_argument('--pdf', action='store_true', help='Output PDF format')
 
     args = parser.parse_args()
     return args
@@ -47,10 +48,10 @@ def main():
         for column in range(3, len(data.columns)):
             sample_name = data.columns[column]
             print(f'Now, processing {sample_name}')
-            create_normal_plot(data, chrs_dict, color_dict, args.coloring_mode, args.fill, args.display_marker_names, sample_name, column, args.output, args.dpi)
+            create_normal_plot(data, chrs_dict, color_dict, args.coloring_mode, args.fill, args.display_marker_names, sample_name, column, args.output, args.dpi, args.pdf)
     
     elif args.drawing_mode == "compare":
-        create_comparison_plot(data, chrs_dict, color_dict, args.coloring_mode, args.fill, args.display_marker_names, args.output, args.dpi)
+        create_comparison_plot(data, chrs_dict, color_dict, args.coloring_mode, args.fill, args.display_marker_names, args.output, args.dpi, args.pdf)
 
     elif args.drawing_mode == "zoomed":
 
@@ -75,7 +76,7 @@ def main():
             print('\nEnd position is larger than chromosome length😢!')
             sys.exit(1)
             
-        create_zoomed_plot(data, chrs_dict, color_dict, args.coloring_mode, args.fill, args.chr, args.start, args.end, args.output, args.dpi)
+        create_zoomed_plot(data, chrs_dict, color_dict, args.coloring_mode, args.fill, args.display_marker_names, args.chr, args.start, args.end, args.output, args.dpi, args.pdf)
 
     else:
         print('\nInvalid argument for drawing mode')

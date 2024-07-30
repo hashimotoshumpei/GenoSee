@@ -127,7 +127,7 @@ def add_legend2(ax, Color_mode, color_dict, chr_width, chr_interval, max_chr_len
             ax.text(x1, (y0+y1)/2, legend_category[i], size=20, horizontalalignment='left', verticalalignment='center')
 
 
-def create_normal_plot(data, chrs_dict, color_dict, Color_mode, fill, display_marker_names, sample_name, column_number, output_path, dpi):
+def create_normal_plot(data, chrs_dict, color_dict, Color_mode, fill, display_marker_names, sample_name, column_number, output_path, dpi, pdf):
 
     #########################################
     chr_width = 0.03
@@ -557,12 +557,15 @@ def create_normal_plot(data, chrs_dict, color_dict, Color_mode, fill, display_ma
     add_legend(ax, fill, Color_mode, color_dict, chr_width, chr_interval, max_chr_length, left)
     ax.set_xlim(0, left+chr_interval*2)
     print('Saving image...💌')
-    plt.savefig(f'{output_path}/{sample_name}_{mode}_{Color_mode}.pdf', bbox_inches='tight')
+
+    if pdf: 
+        plt.savefig(f'{output_path}/{sample_name}_{mode}_{Color_mode}.pdf', bbox_inches='tight')
+
     plt.savefig(f'{output_path}/{sample_name}_{mode}_{Color_mode}.png', dpi=dpi, bbox_inches='tight')
     plt.clf()
     plt.close()
     
-def create_comparison_plot(data, chrs_dict, color_dict, Color_mode, fill, display_marker_names, output_path, dpi):
+def create_comparison_plot(data, chrs_dict, color_dict, Color_mode, fill, display_marker_names, output_path, dpi, pdf):
 
     for chr_id, chr_length in chrs_dict.items():
 
@@ -973,12 +976,15 @@ def create_comparison_plot(data, chrs_dict, color_dict, Color_mode, fill, displa
         add_legend(ax, fill, Color_mode, color_dict, chr_width, chr_interval, max_chr_length, left)
         print('Saving image...💌')
         ax.set_xlim(0, left+chr_interval*4)
-        plt.savefig(f'{output_path}/{chr_id}_comparison_plot_{Color_mode}.pdf', bbox_inches='tight')
+
+        if pdf:
+            plt.savefig(f'{output_path}/{chr_id}_comparison_plot_{Color_mode}.pdf', bbox_inches='tight')
+
         plt.savefig(f'{output_path}/{chr_id}_comparison_plot_{Color_mode}.png', dpi=dpi, bbox_inches='tight')
         plt.clf()
         plt.close()
 
-def create_zoomed_plot(data, chrs_dict, color_dict, Color_mode, fill, chr_id, start_pos, end_pos, output_path, dpi):
+def create_zoomed_plot(data, chrs_dict, color_dict, Color_mode, fill, display_marker_names, chr_id, start_pos, end_pos, output_path, dpi, pdf):
 
     ########################
     width = 0.01
@@ -1027,16 +1033,18 @@ def create_zoomed_plot(data, chrs_dict, color_dict, Color_mode, fill, chr_id, st
             last_position = -10 ** 8
             offset = 10**6 * ((end_pos - start_pos)/(60 * 10**6))
 
-            for pos, marker_name in zip(positions, marker_names):
-                x_pos = pos
-                if pos - last_position < offset:
-                    pos = last_position + offset
+            if display_marker_names == 'on':
 
-                ax.vlines(x_pos, bottom, bottom + (width*2 + interval) * len(range(3, len(data.columns))) - interval, colors='black', linestyle='dashed', lw=1.2)
-                ax.plot([pos, x_pos], [bottom-0.02, bottom], color='black', linestyle='-')
-                ax.text(pos, bottom - 0.03, marker_name, fontsize=18, verticalalignment="bottom", horizontalalignment="left", rotation=45)
+                for pos, marker_name in zip(positions, marker_names):
+                    x_pos = pos
+                    if pos - last_position < offset:
+                        pos = last_position + offset
 
-                last_position = pos
+                    ax.vlines(x_pos, bottom, bottom + (width*2 + interval) * len(range(3, len(data.columns))) - interval, colors='black', linestyle='dashed', lw=1.2)
+                    ax.plot([pos, x_pos], [bottom-0.02, bottom], color='black', linestyle='-')
+                    ax.text(pos, bottom - 0.03, marker_name, fontsize=18, verticalalignment="bottom", horizontalalignment="left", rotation=45)
+
+                    last_position = pos
 
         if Color_mode == '3-color':
             for i in range(len(marker_names)):
@@ -1315,5 +1323,8 @@ def create_zoomed_plot(data, chrs_dict, color_dict, Color_mode, fill, chr_id, st
 
     add_legend2(ax, Color_mode, color_dict, width, interval, end_pos-start_pos, bottom, start_pos)
     print('Saving image...💌')
-    plt.savefig(f'{output_path}/{chr_id}_{start_pos}_{end_pos}_{Color_mode}.pdf', bbox_inches='tight')
+
+    if pdf:
+        plt.savefig(f'{output_path}/{chr_id}_{start_pos}_{end_pos}_{Color_mode}.pdf', bbox_inches='tight')
+        
     plt.savefig(f'{output_path}/{chr_id}_{start_pos}_{end_pos}_{Color_mode}.png', dpi=dpi, bbox_inches='tight')
