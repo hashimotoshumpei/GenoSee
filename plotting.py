@@ -131,14 +131,14 @@ def create_normal_plot(data, chrs_dict, color_dict, Color_mode, fill, display_ma
 
     #########################################
     chr_width = 0.03
-    chr_interval = 0.24
+    chr_interval = 0.26
     pos_offset = 10 ** 5
-    fig_size_h = 20
+    fig_size_h = 18
     fig_size_w = len(chrs_dict)*(chr_width + chr_interval)*10
     chr_text_size = 24
     sample_name_text_size = 24
     Mb_text_size = 20
-    marker_name_text_size = 8
+    marker_name_text_size = 9
     #########################################
 
     fig, ax = plt.figure(facecolor='white', figsize=(fig_size_w, fig_size_h)), plt.axes()
@@ -148,15 +148,15 @@ def create_normal_plot(data, chrs_dict, color_dict, Color_mode, fill, display_ma
 
 
     ax.get_yaxis().set_major_formatter(FuncFormatter(format_func))
-    ax.tick_params(labelsize=16)
+    ax.tick_params(labelsize=20)
     ax.set_ylim(0, round_up_second_digit(max_chr_length))
     ax.invert_yaxis()
     ax.spines['left'].set_position(('data', 0))
     ax.spines["top"].set_visible(False)
-    ax.spines["left"].set_linewidth(1.5)
+    ax.spines["left"].set_linewidth(2.5)
     ax.spines["bottom"].set_visible(False)
     ax.spines["right"].set_visible(False)
-    ax.tick_params(direction="out", length=8, width=1.5, bottom=False, labelbottom=False)
+    ax.tick_params(direction="out", length=8, width=2.5, bottom=False, labelbottom=False)
     ax.text(0, 0, ' (Mb)', size=Mb_text_size, horizontalalignment='left')
     ax.text(0, -max_chr_length*0.1, f'{sample_name}', size=sample_name_text_size)
 
