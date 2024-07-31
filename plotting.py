@@ -57,7 +57,7 @@ def add_legend(ax, fill, Color_mode, color_dict, chr_width, chr_interval, max_ch
                 legend_width = chr_width*2
                 legend_height = max_chr_length*0.03 
 
-                x0 = left + chr_width + chr_interval
+                x0 = left + chr_width*4 + chr_interval
                 x1 = x0 + legend_width
                 y0 = legend_height * (3 * i + 1)/2
                 y1 = y0 + legend_height
@@ -75,7 +75,7 @@ def add_legend(ax, fill, Color_mode, color_dict, chr_width, chr_interval, max_ch
                 legend_width = chr_width*2
                 legend_height = max_chr_length*0.03 
 
-                x0 = left + chr_width + chr_interval
+                x0 = left + chr_width*4 + chr_interval
                 x1 = x0 + legend_width
                 y0 = legend_height * (3 * i + 1)/2
                 y1 = y0 + legend_height
