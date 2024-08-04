@@ -492,6 +492,9 @@ def create_normal_plot(data, chrs_dict, color_dict, Color_mode, fill, display_ma
                     if genotypes[i] == "0|1":
                         ax.hlines(positions[i], left, right, colors=color_dict["0|1"], lw=3)
 
+                    elif genotypes[i] == "1|0":
+                        ax.hlines(positions[i], left, right, colors=color_dict["0|1"], lw=3)
+
                     elif genotypes[i] == "0|0":
                         ax.hlines(positions[i], left, right, colors=color_dict["0|0"], lw=3)
 
