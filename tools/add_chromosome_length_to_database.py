@@ -70,13 +70,13 @@ def add_chromosome_lengths_to_json(fasta_file: str, json_file: str, key_name: st
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Add chromosome lengths to a JSON file.")
-    parser.add_argument("fasta_file", help="Path to the input FASTA file (can be compressed).")
-    parser.add_argument("json_file", help="Path to the existing JSON file.")
-    parser.add_argument("key_name", help="Key name to add the chromosome lengths under in the JSON file.")
+    parser.add_argument("--fasta", required=True, help="Path to the input FASTA file (can be compressed).")
+    parser.add_argument("--database", required=True, help="Path to the existing JSON file.")
+    parser.add_argument("--name", required=True, help="Key name to add the chromosome lengths under in the JSON file.")
     
     args = parser.parse_args()
     
-    add_chromosome_lengths_to_json(args.fasta_file, args.json_file, args.key_name)
+    add_chromosome_lengths_to_json(args.fasta, args.database, args.name)
 
 if __name__ == "__main__":
     main()

@@ -5,7 +5,19 @@ from matplotlib.ticker import FuncFormatter
 import matplotlib.ticker as ticker
 from tqdm import tqdm
 import numpy as np
+import sys
 from utilities import round_up_second_digit
+
+def raise_genotype_error():
+    print("""
+Your input file includes inappropriate genotype(s).
+The following genotypes can’t analyze in the current version of GenoSee.
+=======================================================
+1. Allopolyploid genotypes (e.g. 0/0/0/1, 1/1/1/1 …)
+2. Multi-allelic genotypes (e.g. 0/2, 1/3 …)
+=======================================================
+""")
+    sys.exit(1)
 
 def format_func(value, tick_number):
     return f"{int(value/1000000)}"
@@ -67,6 +79,7 @@ def add_legend(ax, fill, Color_mode, color_dict, chr_width, chr_interval, max_ch
                         )
                 ax.text(x1, (y0+y1)/2, legend_category[i], size=12, horizontalalignment='left', verticalalignment='center')
                 ax.hlines((y0+y1)/2, x0, x1, colors=color_dict[geno], lw=5)
+                
         if Color_mode == '3-color':
             for i, geno in enumerate(['0', '1', '0|1', '.']):   
             
@@ -198,6 +211,12 @@ def create_normal_plot(data, chrs_dict, color_dict, Color_mode, fill, display_ma
                         current_geno = genotypes[i].replace('1|0', '0|1')
                         next_geno = genotypes[i + 1].replace('1|0', '0|1')
 
+                        #check genotype 
+                        if current_geno not in ['0|0', '1|1', '0|1', '1|0', '.|.']:
+                            raise_genotype_error()
+                            print(current_geno)
+
+
                         if i == 0:
                             ax.add_patch(
                                 patches.Polygon(
@@ -295,6 +314,9 @@ def create_normal_plot(data, chrs_dict, color_dict, Color_mode, fill, display_ma
 
                         current_geno = genotypes[i]
                         next_geno = genotypes[i + 1]
+
+                        if current_geno not in ['0|0', '1|1', '0|1', '1|0', '.|.']:
+                            raise_genotype_error()
 
                         current_geno_left = current_geno.split('|')[0]
                         current_geno_right = current_geno.split('|')[1]
@@ -488,6 +510,8 @@ def create_normal_plot(data, chrs_dict, color_dict, Color_mode, fill, display_ma
                     genotypes[i] = genotypes[i].replace('N', '.|.')
                     genotypes[i] = genotypes[i].replace('/', '|')
 
+                    if genotypes[i] not in ['0|0', '1|1', '0|1', '1|0', '.|.']:
+                            raise_genotype_error()
 
                     if genotypes[i] == "0|1":
                         ax.hlines(positions[i], left, right, colors=color_dict["0|1"], lw=3)
@@ -515,6 +539,9 @@ def create_normal_plot(data, chrs_dict, color_dict, Color_mode, fill, display_ma
                     genotypes[i] = genotypes[i].replace('H', '0|1')
                     genotypes[i] = genotypes[i].replace('N', '.|.')
                     genotypes[i] = genotypes[i].replace('/', '|')
+
+                    if genotypes[i] not in ['0|0', '1|1', '0|1', '1|0', '.|.']:
+                        raise_genotype_error()
 
                     if genotypes[i] == "0|1":
                         ax.hlines(positions[i], left, (left + right)/2, colors=color_dict["0|0"], lw=3)
@@ -657,6 +684,9 @@ def create_comparison_plot(data, chrs_dict, color_dict, Color_mode, fill, displa
                             current_geno = genotypes[i].replace('1|0', '0|1')
                             next_geno = genotypes[i + 1].replace('1|0', '0|1')
 
+                            if genotypes[i] not in ['0|0', '1|1', '0|1', '1|0', '.|.']:
+                                raise_genotype_error()
+
                             if i == 0:
                                 ax.add_patch(
                                     patches.Polygon(
@@ -754,6 +784,9 @@ def create_comparison_plot(data, chrs_dict, color_dict, Color_mode, fill, displa
 
                             current_geno = genotypes[i]
                             next_geno = genotypes[i + 1]
+
+                            if genotypes[i] not in ['0|0', '1|1', '0|1', '1|0', '.|.']:
+                                raise_genotype_error()
 
                             current_geno_left = current_geno.split('|')[0]
                             current_geno_right = current_geno.split('|')[1]
@@ -924,7 +957,13 @@ def create_comparison_plot(data, chrs_dict, color_dict, Color_mode, fill, displa
                         genotypes[i] = genotypes[i].replace('N', '.|.')
                         genotypes[i] = genotypes[i].replace('/', '|')
 
+                        if genotypes[i] not in ['0|0', '1|1', '0|1', '1|0', '.|.']:
+                            raise_genotype_error()
+
                         if genotypes[i] == "0|1":
+                            ax.hlines(positions[i], left, right, colors=color_dict["0|1"], lw=3)
+
+                        elif genotypes[i] == "1|0":
                             ax.hlines(positions[i], left, right, colors=color_dict["0|1"], lw=3)
 
                         elif genotypes[i] == "0|0":
@@ -949,11 +988,14 @@ def create_comparison_plot(data, chrs_dict, color_dict, Color_mode, fill, displa
                         genotypes[i] = genotypes[i].replace('N', '.|.')
                         genotypes[i] = genotypes[i].replace('/', '|')
 
+                        if genotypes[i] not in ['0|0', '1|1', '0|1', '1|0', '.|.']:
+                            raise_genotype_error()
+
                         if genotypes[i] == "0|1":
                             ax.hlines(positions[i], left, (left + right)/2, colors=color_dict["0"], lw=3)
                             ax.hlines(positions[i], (left + right)/2, right, colors=color_dict["1"], lw=3)
                         
-                        if genotypes[i] == "1|0":
+                        elif genotypes[i] == "1|0":
                             ax.hlines(positions[i], left, (left + right)/2, colors=color_dict["1"], lw=3)
                             ax.hlines(positions[i], (left + right)/2, right, colors=color_dict["0"], lw=3)
 
@@ -1073,6 +1115,11 @@ def create_zoomed_plot(data, chrs_dict, color_dict, Color_mode, fill, display_ma
                     current_geno = genotypes[i].replace('1|0', '0|1')
                     next_geno = genotypes[i + 1].replace('1|0', '0|1')
 
+                    if genotypes[i] not in ['0|0', '1|1', '0|1', '1|0', '.|.']:
+                        raise_genotype_error()
+
+
+
                     if i == 0:
                         ax.add_patch(
                             patches.Polygon(
@@ -1169,6 +1216,9 @@ def create_zoomed_plot(data, chrs_dict, color_dict, Color_mode, fill, display_ma
 
                     current_geno = genotypes[i]
                     next_geno = genotypes[i + 1]
+
+                    if genotypes[i] not in ['0|0', '1|1', '0|1', '1|0', '.|.']:
+                        raise_genotype_error()
 
                     current_geno_left = current_geno.split('|')[0]
                     current_geno_right = current_geno.split('|')[1]
