@@ -13,7 +13,7 @@ def raise_genotype_error():
 Your input file includes inappropriate genotype(s).
 The following genotypes can’t analyze in the current version of GenoSee.
 =======================================================
-1. Allopolyploid genotypes (e.g. 0/0/0/1, 1/1/1/1 …)
+1. Polyploid genotypes (e.g. 0/0/0/1, 1/1/1/1 …)
 2. Multi-allelic genotypes (e.g. 0/2, 1/3 …)
 =======================================================
 """)
