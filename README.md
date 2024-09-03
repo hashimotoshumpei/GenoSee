@@ -233,6 +233,6 @@ To use ColabGenoSee, first move the ColabGenoSee folder to your Google Drive, th
 
 ## Citation
 
-Hashimoto (2024) GenoSee is All You Need: A Novel Visualization Tool for Graphical Genotypes, *Breeding Science*, *in press*.
+Hashimoto (2024) GenoSee is All You Need: A Novel Visualization Tool for Graphical Genotypes, **_Breeding Science_**, *in press*.
 
 ![img15](image/genosee_logo2.png)
