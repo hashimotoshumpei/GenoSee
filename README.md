@@ -6,11 +6,16 @@
 ![GitHub License](https://img.shields.io/github/license/hashimotoshumpei/GenoSee)
 <img src="https://img.shields.io/badge/-Python-F9DC3E.svg?logo=python&style=flat">
 
-# A high-quality visualization tool for graphical genotype
-
-
+# A high-quality visualization tool for graphical genotypes
 
 ![img2](image/readme_img_1.png)
+
+## Citation
+Hashimoto (2024) GenoSee: A Novel Visualization Tool for Graphical Genotypes, **_Breeding Science_**, *in press*.
+
+<p align="right">
+  <img src="image/genosee_logo2.png" alt="img15">
+</p>
 
 ## Getting Started
 ### Installation
@@ -230,9 +235,3 @@ By editing `color_set.json` directly, you can use new color sets for visualizati
 ![img](image/ColabGenoSee.png)
 ColabGenoSee is the Google Colab version of GenoSee.
 To use ColabGenoSee, first move the ColabGenoSee folder to your Google Drive, then open ColabGenoSee.ipynb in Google Colab and run it.
-
-## Citation
-
-Hashimoto (2024) GenoSee is All You Need: A Novel Visualization Tool for Graphical Genotypes, **_Breeding Science_**, *in press*.
-
-![img15](image/genosee_logo2.png)
