@@ -200,12 +200,14 @@ def create_normal_plot(data, chrs_dict, color_dict, Color_mode, fill, display_ma
                         genotypes[i] = genotypes[i].replace('B', '1|1')
                         genotypes[i] = genotypes[i].replace('H', '0|1')
                         genotypes[i] = genotypes[i].replace('N', '.|.')
+                        genotypes[i] = genotypes[i].replace('.', '.|.')
                         genotypes[i] = genotypes[i].replace('/', '|')
 
                         genotypes[i+1] = genotypes[i+1].replace('A', '0|0')
                         genotypes[i+1] = genotypes[i+1].replace('B', '1|1')
                         genotypes[i+1] = genotypes[i+1].replace('H', '0|1')
                         genotypes[i+1] = genotypes[i+1].replace('N', '.|.')
+                        genotypes[i+1] = genotypes[i+1].replace('.', '.|.')
                         genotypes[i+1] = genotypes[i+1].replace('/', '|')
 
                         current_geno = genotypes[i].replace('1|0', '0|1')
@@ -304,12 +306,14 @@ def create_normal_plot(data, chrs_dict, color_dict, Color_mode, fill, display_ma
                         genotypes[i] = genotypes[i].replace('B', '1|1')
                         genotypes[i] = genotypes[i].replace('H', '0|1')
                         genotypes[i] = genotypes[i].replace('N', '.|.')
+                        genotypes[i] = genotypes[i].replace('.', '.|.')
                         genotypes[i] = genotypes[i].replace('/', '|')
 
                         genotypes[i+1] = genotypes[i+1].replace('A', '0|0')
                         genotypes[i+1] = genotypes[i+1].replace('B', '1|1')
                         genotypes[i+1] = genotypes[i+1].replace('H', '0|1')
                         genotypes[i+1] = genotypes[i+1].replace('N', '.|.')
+                        genotypes[i+1] = genotypes[i+1].replace('.', '.|.')
                         genotypes[i+1] = genotypes[i+1].replace('/', '|')
 
                         current_geno = genotypes[i]
@@ -508,6 +512,7 @@ def create_normal_plot(data, chrs_dict, color_dict, Color_mode, fill, display_ma
                     genotypes[i] = genotypes[i].replace('B', '1|1')
                     genotypes[i] = genotypes[i].replace('H', '0|1')
                     genotypes[i] = genotypes[i].replace('N', '.|.')
+                    genotypes[i] = genotypes[i].replace('.', '.|.')
                     genotypes[i] = genotypes[i].replace('/', '|')
 
                     if genotypes[i] not in ['0|0', '1|1', '0|1', '1|0', '.|.']:
@@ -538,6 +543,7 @@ def create_normal_plot(data, chrs_dict, color_dict, Color_mode, fill, display_ma
                     genotypes[i] = genotypes[i].replace('B', '1|1')
                     genotypes[i] = genotypes[i].replace('H', '0|1')
                     genotypes[i] = genotypes[i].replace('N', '.|.')
+                    genotypes[i] = genotypes[i].replace('.', '.|.')
                     genotypes[i] = genotypes[i].replace('/', '|')
 
                     if genotypes[i] not in ['0|0', '1|1', '0|1', '1|0', '.|.']:
@@ -673,12 +679,14 @@ def create_comparison_plot(data, chrs_dict, color_dict, Color_mode, fill, displa
                             genotypes[i] = genotypes[i].replace('B', '1|1')
                             genotypes[i] = genotypes[i].replace('H', '0|1')
                             genotypes[i] = genotypes[i].replace('N', '.|.')
+                            genotypes[i] = genotypes[i].replace('.', '.|.')
                             genotypes[i] = genotypes[i].replace('/', '|')
 
                             genotypes[i+1] = genotypes[i+1].replace('A', '0|0')
                             genotypes[i+1] = genotypes[i+1].replace('B', '1|1')
                             genotypes[i+1] = genotypes[i+1].replace('H', '0|1')
                             genotypes[i+1] = genotypes[i+1].replace('N', '.|.')
+                            genotypes[i+1] = genotypes[i+1].replace('.', '.|.')
                             genotypes[i+1] = genotypes[i+1].replace('/', '|')
 
                             current_geno = genotypes[i].replace('1|0', '0|1')
@@ -774,12 +782,14 @@ def create_comparison_plot(data, chrs_dict, color_dict, Color_mode, fill, displa
                             genotypes[i] = genotypes[i].replace('B', '1|1')
                             genotypes[i] = genotypes[i].replace('H', '0|1')
                             genotypes[i] = genotypes[i].replace('N', '.|.')
+                            genotypes[i] = genotypes[i].replace('.', '.|.')
                             genotypes[i] = genotypes[i].replace('/', '|')
 
                             genotypes[i+1] = genotypes[i+1].replace('A', '0|0')
                             genotypes[i+1] = genotypes[i+1].replace('B', '1|1')
                             genotypes[i+1] = genotypes[i+1].replace('H', '0|1')
                             genotypes[i+1] = genotypes[i+1].replace('N', '.|.')
+                            genotypes[i+1] = genotypes[i+1].replace('.', '.|.')
                             genotypes[i+1] = genotypes[i+1].replace('/', '|')
 
                             current_geno = genotypes[i]
@@ -955,6 +965,7 @@ def create_comparison_plot(data, chrs_dict, color_dict, Color_mode, fill, displa
                         genotypes[i] = genotypes[i].replace('B', '1|1')
                         genotypes[i] = genotypes[i].replace('H', '0|1')
                         genotypes[i] = genotypes[i].replace('N', '.|.')
+                        genotypes[i] = genotypes[i].replace('.', '.|.')
                         genotypes[i] = genotypes[i].replace('/', '|')
 
                         if genotypes[i] not in ['0|0', '1|1', '0|1', '1|0', '.|.']:
@@ -986,6 +997,7 @@ def create_comparison_plot(data, chrs_dict, color_dict, Color_mode, fill, displa
                         genotypes[i] = genotypes[i].replace('B', '1|1')
                         genotypes[i] = genotypes[i].replace('H', '0|1')
                         genotypes[i] = genotypes[i].replace('N', '.|.')
+                        genotypes[i] = genotypes[i].replace('.', '.|.')
                         genotypes[i] = genotypes[i].replace('/', '|')
 
                         if genotypes[i] not in ['0|0', '1|1', '0|1', '1|0', '.|.']:
@@ -1104,12 +1116,14 @@ def create_zoomed_plot(data, chrs_dict, color_dict, Color_mode, fill, display_ma
                     genotypes[i] = genotypes[i].replace('B', '1|1')
                     genotypes[i] = genotypes[i].replace('H', '0|1')
                     genotypes[i] = genotypes[i].replace('N', '.|.')
+                    genotypes[i] = genotypes[i].replace('.', '.|.')
                     genotypes[i] = genotypes[i].replace('/', '|')
 
                     genotypes[i+1] = genotypes[i+1].replace('A', '0|0')
                     genotypes[i+1] = genotypes[i+1].replace('B', '1|1')
                     genotypes[i+1] = genotypes[i+1].replace('H', '0|1')
                     genotypes[i+1] = genotypes[i+1].replace('N', '.|.')
+                    genotypes[i+1] = genotypes[i+1].replace('.', '.|.')
                     genotypes[i+1] = genotypes[i+1].replace('/', '|')
 
                     current_geno = genotypes[i].replace('1|0', '0|1')
@@ -1206,12 +1220,14 @@ def create_zoomed_plot(data, chrs_dict, color_dict, Color_mode, fill, display_ma
                     genotypes[i] = genotypes[i].replace('B', '1|1')
                     genotypes[i] = genotypes[i].replace('H', '0|1')
                     genotypes[i] = genotypes[i].replace('N', '.|.')
+                    genotypes[i] = genotypes[i].replace('.', '.|.')
                     genotypes[i] = genotypes[i].replace('/', '|')
 
                     genotypes[i+1] = genotypes[i+1].replace('A', '0|0')
                     genotypes[i+1] = genotypes[i+1].replace('B', '1|1')
                     genotypes[i+1] = genotypes[i+1].replace('H', '0|1')
                     genotypes[i+1] = genotypes[i+1].replace('N', '.|.')
+                    genotypes[i+1] = genotypes[i+1].replace('.', '.|.')
                     genotypes[i+1] = genotypes[i+1].replace('/', '|')
 
                     current_geno = genotypes[i]
