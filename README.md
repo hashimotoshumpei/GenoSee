@@ -11,9 +11,7 @@
 ![img2](image/readme_img_1.png)
 
 ## Citation
-Hashimoto (2024) GenoSee: A Novel Visualization Tool for Graphical Genotypes, **_Breeding Science_** 74(5):454-461.
-
-[https://doi.org/10.1270/jsbbs.24041](https://doi.org/10.1270/jsbbs.24041)
+Hashimoto (2024) GenoSee: A Novel Visualization Tool for Graphical Genotypes, **_Breeding Science_** 74(5): 454-461, [https://doi.org/10.1270/jsbbs.24041](https://doi.org/10.1270/jsbbs.24041).
 
 <p align="right">
   <img src="image/genosee_logo2.png" alt="img15">
