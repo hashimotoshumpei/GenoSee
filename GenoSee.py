@@ -31,7 +31,7 @@ def main():
     args = parse_arguments()
     chrs_dict = get_value_from_database('./chromosome_length_database.json', args.species)
     color_dict = get_value_from_database('./color_set.json', args.color_set)
-    data = pd.read_csv(args.input)
+    data = pd.read_csv(args.input, dtype={'chr': str})
     data.sort_values(['chr', 'pos'], inplace=True)
 
     if not (len(data.columns) > 3 and all(data.columns.values[:3] == ['chr', 'marker_name', 'pos'])):
